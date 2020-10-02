@@ -1,0 +1,18 @@
+<h1 class="text-center">Gif Search</h1>
+<h2 class="text-center">Welcome {{username}}!</h2>
+<h2 class="text-center">Welcome {{usernamem | async}}!</h2>
+<h4 class="text-center">You have been here for {{interval$ | async }} seconds</h4>
+<div class="flex-row">
+    <mat-form-field class="search-box">
+        <mat-label>Search</mat-label>
+        <input matInput placeholder="Search" id="search">
+        <mat-hint>Enter at least 3 characters</mat-hint>
+    </mat-form-field>
+</div>
+
+<div class="flex-row">
+    <div class="img-container" *ngFor="let gif of gifs">
+        <h3 class="text-center">{{gif.title}}</h3>
+        <img [src]="gif.url">
+    </div>
+</div>
