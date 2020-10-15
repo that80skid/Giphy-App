@@ -1,0 +1,28 @@
+
+.flex-row{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin: 25px;
+}
+
+.search-box{
+  flex-basis: 75%;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.img-container{
+  flex-basis: calc(100% / 3);
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  margin: 10px 0px;
+}
+
+img{
+  width: 90%;
+  margin: auto;
+}

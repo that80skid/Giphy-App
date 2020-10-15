@@ -1,8 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Gif } from '../interface/gif.interface';
 import { RootState } from '../store';
 import { setSearch } from '../store/actions';
 import { Store } from '@ngrx/store';
@@ -22,7 +20,7 @@ export class GiphyService {
         map((res: any) => res.data),
         map(data => data.map(gif =>
           ({
-            id: gif.id,
+            gifId: gif.id,
             title: gif.title,
             url: gif.images.original.url
           })

@@ -5,7 +5,8 @@ import { Gif } from '../interface/gif.interface';
 import { GiphyService } from '../service/giphy.service';
 import { RootState } from '../store';
 import { Store } from '@ngrx/store';
-import { getUsername, getSearchResults } from '../store/selectors/';
+import { getUserName, getSearchResults } from '../store/selectors';
+import { FavoritesService } from '../service/favorites.service';
 
 @Component({
   selector: 'app-search',
@@ -17,14 +18,18 @@ export class SearchComponent implements OnInit {
   interval$: Observable<number>;
   username: string;
   username$: Observable<string>;
-  constructor(private giphyService: GiphyService, private store: Store<RootState>) {
-    this.username$ = this.store.select(getUsername);
-    this.store.select(getUsername).subscribe(uname => this.username = uname);
+  constructor(private giphyService: GiphyService, private store: Store<RootState>, private faveService: FavoritesService) {
+    this.username$ = this.store.select(getUserName);
+    this.store.select(getUserName).subscribe(uname => this.username = uname);
     this.store.select(getSearchResults).subscribe(results => this.gifs = results);
    }
 
   searchGifs(search: string): void {
     this.giphyService.searchGifs(search);
+  }
+
+  addToFavorites(gif: Gif) {
+    this.faveService.addFavorite(gif);
   }
 
   ngOnInit(): void {

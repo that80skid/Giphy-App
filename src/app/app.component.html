@@ -1,1 +1,20 @@
+<mat-toolbar>
+  <span>Giphy App</span>
+  <span style="flex: 1 1 auto;"></span>
+  <button *ngIf="user" [routerLink]="'/search'" routerLinkActive="active" mat-icon-button>
+   <mat-icon>search</mat-icon>
+ </button>
+ <button *ngIf="user" [routerLink]="'/favorites'" routerLinkActive="active" mat-icon-button>
+  <mat-icon>favorite</mat-icon>
+</button>
+ <button *ngIf="!user" routerLink="/login" routerLinkActive="active" mat-icon-button>
+   <mat-icon>login</mat-icon>
+ </button>
+ <button *ngIf="!user" routerLink="/signup" routerLinkActive="active" mat-icon-button>
+  <mat-icon>face</mat-icon>
+</button>
+ <button *ngIf="user" (click)="logout()" routerLinkActive="active" mat-icon-button>
+   <mat-icon>logout</mat-icon>
+ </button>
+</mat-toolbar>
 <router-outlet></router-outlet>

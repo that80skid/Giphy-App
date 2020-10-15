@@ -1,5 +1,7 @@
 export interface Gif {
-  id: string;
+  userId?: number;
+  id?: number;
+  gifId: string;
   title: string;
   url: string;
 }

@@ -10,5 +10,5 @@ export interface RootState {
 export const reducers: ActionReducerMap<RootState> = {
   user: Reducers.userReducer,
   favorites: Reducers.favoritesReducer,
-  search: Reducers.searchReducer,
-}
+  search: Reducers.searchReducer
+};

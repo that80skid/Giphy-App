@@ -1,4 +1,3 @@
-import { state } from '@angular/animations';
 import { RootState } from '..';
 
 export const getAllFavorites = (state: RootState) => state.favorites.favorites;

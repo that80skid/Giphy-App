@@ -1,5 +1,5 @@
 <h1 class="text-center">Sign Up</h1>
-<form [formGroup]="signupForm" (ngSubmit)="login()" class="form">
+<form [formGroup]="signupForm" (ngSubmit)="signup()" class="form">
     <mat-form-field>
         <mat-label>Username</mat-label>
         <input formControlName="username" matInput placeholder="Username" name="username">
@@ -17,10 +17,10 @@
     </mat-form-field>
 
     <div class="button">
-        <button mat-raised-button color="primary" [disabled]="loginForm.invalid">Login</button>
+        <button mat-raised-button color="primary" [disabled]="signupForm.invalid">Login</button>
     </div>
 
     <div class="text-center">
-      <a routerLink="/signup">Already a user? Log in!</a>
+      <a routerLink="/signup">Already a user? Login!</a>
     </div>
 </form>

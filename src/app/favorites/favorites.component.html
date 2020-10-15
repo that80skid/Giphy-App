@@ -1,1 +1,10 @@
-<a routerLink="/search">Favorites</a>
+<h1 class="text-center">Favorites for {{username}}</h1>
+<div class="flex-row">
+    <div class="img-container" *ngFor="let fave of favorites">
+        <h3 class="text-center">{{fave.title}}</h3>
+        <img [src]="fave.url">
+        <button (click)="removeFavorites(fave.id)" mat-icon-button color="warn" aria-label="Favorite">
+            <mat-icon>favorite</mat-icon> Remove Favorite
+        </button>
+    </div>
+</div>
